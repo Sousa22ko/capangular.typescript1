@@ -135,14 +135,14 @@ var pedido1 = new Pedido_1.Pedido(1, cliente, itensPedido, entrega, transportado
 var pedido2 = new Pedido_1.Pedido(2, cliente2, itensPedido2, entrega2, transportadora2, formaDePagamento2);
 var database = {
     pedidosEmAberto: [pedido1, pedido2],
-    clientes: [cliente],
+    clientes: [cliente, cliente2],
     fabricantes: [fabricante],
     transportadoras: [transportadora]
 };
 for (var _i = 0, _a = database.pedidosEmAberto; _i < _a.length; _i++) {
     var pAbertos = _a[_i];
     var condicoes = pAbertos.calcularValorFinal();
-    console.log("O cliente " + cliente.nome + "\ndeseja que " + (pAbertos.entrega.entrega == true ? "entregue " : "não entregue") + "um total de " + pAbertos.qtdProdutos() + " itens (Total: R$" + pAbertos.valores.valorEstimado + ")");
+    console.log("O cliente " + pAbertos.cliente.nome + "\ndeseja que " + (pAbertos.entrega.entrega == true ? "entregue" : "não entregue") + " um total de " + pAbertos.qtdProdutos() + " itens (Total: R$" + pAbertos.valores.valorEstimado + ")");
     console.log("divididos em " + pAbertos.formaPagamento.parcelas + "x de R$ " + condicoes.valorParcela + " somando R$ " + condicoes.valorFinal);
     if (pAbertos.entrega.entrega) {
         console.log("O pedido ser\u00E1 transportado pela \"" + pAbertos.transportadora.nome + "\" para seu endere\u00E7o na \"" + pAbertos.entrega.endereco.rua + " " + pAbertos.entrega.endereco.numero + "\" em at\u00E9 " + condicoes.prazoDeEntrega + " dias \u00FAteis");

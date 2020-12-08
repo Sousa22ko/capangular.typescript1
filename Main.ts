@@ -162,7 +162,7 @@ let pedido2 = new Pedido(2, cliente2, itensPedido2, entrega2, transportadora2, f
 
 var database = {
     pedidosEmAberto: [pedido1, pedido2],
-    clientes: [cliente],
+    clientes: [cliente, cliente2],
     fabricantes: [fabricante],
     transportadoras: [transportadora]
 }
@@ -171,7 +171,7 @@ var database = {
 for(let pAbertos of database.pedidosEmAberto){
     let condicoes = pAbertos.calcularValorFinal();
 
-    console.log(`O cliente ${cliente.nome}\ndeseja que ${pAbertos.entrega.entrega == true? "entregue ": "não entregue"}um total de ${pAbertos.qtdProdutos()} itens (Total: R$${pAbertos.valores.valorEstimado})`);
+    console.log(`O cliente ${pAbertos.cliente.nome}\ndeseja que ${pAbertos.entrega.entrega == true? "entregue": "não entregue"} um total de ${pAbertos.qtdProdutos()} itens (Total: R$${pAbertos.valores.valorEstimado})`);
     console.log(`divididos em ${pAbertos.formaPagamento.parcelas}x de R$ ${condicoes.valorParcela} somando R$ ${condicoes.valorFinal}`)
     
      if(pAbertos.entrega.entrega){
