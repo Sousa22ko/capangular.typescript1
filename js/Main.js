@@ -107,7 +107,7 @@ var formaDePagamento = {
 var formaDePagamento2 = {
     parcelado: false,
     cartao: "56789102372-xxx",
-    parcelas: 0
+    parcelas: 1
 };
 var item1 = {
     produto: produto1,

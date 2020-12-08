@@ -126,7 +126,7 @@ let formaDePagamento = {
 let formaDePagamento2 = {
     parcelado: false,
     cartao: "56789102372-xxx",
-    parcelas: 0
+    parcelas: 1
 }
 
 let item1 = {
