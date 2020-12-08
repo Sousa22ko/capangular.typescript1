@@ -171,12 +171,15 @@ var database = {
 for(let pAbertos of database.pedidosEmAberto){
     let condicoes = pAbertos.calcularValorFinal();
 
+    console.log("-------------------------------------------------------------------")
     console.log(`O cliente ${pAbertos.cliente.nome}\ndeseja que ${pAbertos.entrega.entrega == true? "entregue": "não entregue"} um total de ${pAbertos.qtdProdutos()} itens (Total: R$${pAbertos.valores.valorEstimado})`);
     console.log(`divididos em ${pAbertos.formaPagamento.parcelas}x de R$ ${condicoes.valorParcela} somando R$ ${condicoes.valorFinal}`)
     
      if(pAbertos.entrega.entrega){
          console.log(`O pedido será transportado pela "${pAbertos.transportadora.nome}" para seu endereço na "${pAbertos.entrega.endereco.rua} ${pAbertos.entrega.endereco.numero}" em até ${condicoes.prazoDeEntrega} dias úteis`)
      }
+
+
 }
 
 

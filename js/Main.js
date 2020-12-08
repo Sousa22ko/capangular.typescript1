@@ -142,6 +142,7 @@ var database = {
 for (var _i = 0, _a = database.pedidosEmAberto; _i < _a.length; _i++) {
     var pAbertos = _a[_i];
     var condicoes = pAbertos.calcularValorFinal();
+    console.log("-------------------------------------------------------------------");
     console.log("O cliente " + pAbertos.cliente.nome + "\ndeseja que " + (pAbertos.entrega.entrega == true ? "entregue" : "não entregue") + " um total de " + pAbertos.qtdProdutos() + " itens (Total: R$" + pAbertos.valores.valorEstimado + ")");
     console.log("divididos em " + pAbertos.formaPagamento.parcelas + "x de R$ " + condicoes.valorParcela + " somando R$ " + condicoes.valorFinal);
     if (pAbertos.entrega.entrega) {
